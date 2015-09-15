@@ -9,7 +9,7 @@ Completed:
 
 * [x] Required: Add description to NSLog
 * [x] Required: Create table with custom cells for repo results
-* [] Required: Create settings page
-* [] Required: Allow filtering by language
+* [ ] Required: Create settings page
+* [ ] Required: Allow filtering by language
 
 ![Video Walkthrough](walkthrough.gif)
