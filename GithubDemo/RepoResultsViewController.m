@@ -78,8 +78,6 @@
   cell.forkLabel.text = [NSString stringWithFormat:@"%d", (int)repo.forks];
   cell.starLabel.text = [NSString stringWithFormat:@"%d", (int)repo.stars];
 
-  [cell.photoView setImageWithURL:photo.standardResolutionUrl];
-
   return cell;
 }
 
