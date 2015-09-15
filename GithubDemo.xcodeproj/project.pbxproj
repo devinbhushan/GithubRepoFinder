@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0159E65E1BA8AF6E0011A444 /* RepoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0159E65D1BA8AF6E0011A444 /* RepoCell.m */; settings = {ASSET_TAGS = (); }; };
 		114EB9391BA8319D006B75CA /* RepoResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 114EB9381BA8319D006B75CA /* RepoResultsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		114EB93C1BA8441F006B75CA /* GithubRepo.m in Sources */ = {isa = PBXBuildFile; fileRef = 114EB93B1BA8441F006B75CA /* GithubRepo.m */; settings = {ASSET_TAGS = (); }; };
 		114EB93F1BA84437006B75CA /* GithubRepoSearchSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 114EB93E1BA84437006B75CA /* GithubRepoSearchSettings.m */; settings = {ASSET_TAGS = (); }; };
@@ -29,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0159E65C1BA8AF6E0011A444 /* RepoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepoCell.h; sourceTree = "<group>"; };
+		0159E65D1BA8AF6E0011A444 /* RepoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepoCell.m; sourceTree = "<group>"; };
 		114EB9371BA8319D006B75CA /* RepoResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepoResultsViewController.h; sourceTree = "<group>"; };
 		114EB9381BA8319D006B75CA /* RepoResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepoResultsViewController.m; sourceTree = "<group>"; };
 		114EB93A1BA8441F006B75CA /* GithubRepo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GithubRepo.h; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 				114EB9381BA8319D006B75CA /* RepoResultsViewController.m */,
 				114EB93A1BA8441F006B75CA /* GithubRepo.h */,
 				114EB93B1BA8441F006B75CA /* GithubRepo.m */,
+				0159E65C1BA8AF6E0011A444 /* RepoCell.h */,
+				0159E65D1BA8AF6E0011A444 /* RepoCell.m */,
 				114EB93D1BA84437006B75CA /* GithubRepoSearchSettings.h */,
 				114EB93E1BA84437006B75CA /* GithubRepoSearchSettings.m */,
 			);
@@ -288,6 +293,7 @@
 			files = (
 				114EB9391BA8319D006B75CA /* RepoResultsViewController.m in Sources */,
 				6B2DDEEE1B02911A00D25281 /* AppDelegate.swift in Sources */,
+				0159E65E1BA8AF6E0011A444 /* RepoCell.m in Sources */,
 				114EB93C1BA8441F006B75CA /* GithubRepo.m in Sources */,
 				114EB93F1BA84437006B75CA /* GithubRepoSearchSettings.m in Sources */,
 			);

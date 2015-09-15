@@ -10,16 +10,26 @@
 #import "MBProgressHUD.h"
 #import "GithubRepo.h"
 #import "GithubRepoSearchSettings.h"
+#import "RepoCell.h"
 
-@interface RepoResultsViewController ()
+@interface RepoResultsViewController () <UITableViewDataSource,
+                                         UITableViewDelegate>
+
 @property(nonatomic, strong) UISearchBar *searchBar;
 @property(nonatomic, strong) GithubRepoSearchSettings *searchSettings;
+@property(weak, nonatomic) IBOutlet UITableView *repoTableView;
+@property(weak, nonatomic) IBOutlet RepoCell *repoCell;
+@property(nonatomic, strong) NSArray *repos;
 @end
 
 @implementation RepoResultsViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+
+  self.repoTableView.delegate = self;
+  self.repoTableView.dataSource = self;
+
   self.searchSettings = [[GithubRepoSearchSettings alloc] init];
   self.searchBar = [[UISearchBar alloc] init];
   self.searchBar.delegate = self;
@@ -41,9 +51,36 @@
                                      repo.name, repo.stars, repo.forks,
                                      repo.ownerHandle, repo.ownerAvatarURL,
                                      repo.repoDescription]);
+          _repos = repos;
+          [self.repoTableView reloadData];
         }
         [MBProgressHUD hideHUDForView:self.view animated:YES];
       }];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  return 10;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section {
+  return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  RepoCell *cell =
+      [tableView dequeueReusableCellWithIdentifier:@"com.yahoo.repoCell"];
+
+  GithubRepo *repo = self.repos[indexPath.section];
+
+  cell.repoName.text = repo.name;
+  cell.forkLabel.text = [NSString stringWithFormat:@"%d", (int)repo.forks];
+  cell.starLabel.text = [NSString stringWithFormat:@"%d", (int)repo.stars];
+
+  [cell.photoView setImageWithURL:photo.standardResolutionUrl];
+
+  return cell;
 }
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
@@ -65,6 +102,11 @@
   self.searchSettings.searchString = searchBar.text;
   [searchBar resignFirstResponder];
   [self doSearch];
+}
+
+- (void)tableView:(UITableView *)tableView
+    didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
 }
 
 /*
